@@ -1,0 +1,48 @@
+﻿@model Order
+@inject IFoodRepo foodRepo
+
+@{
+	ViewBag.Title = "Beställning";
+	int articles = 0;
+	string delivered = "";
+	
+}
+
+<main id="main">
+
+	<h3><span>Beställning</span></h3>		
+@if(ViewBag.Status == false)
+{
+	List<Order> orders = foodRepo.GetOrderList(ViewBag.Id);
+
+	<h5><span>Dina beställningar</span></h5>
+
+	@foreach(var order in orders)
+	{
+		<p><strong>@order.OrderDate</strong></p>
+		<p>BeställningsID: @order.OrderId</p>
+		<p>TotalBelopp: @order.TotalAmount kr</p>
+		<p>Levererad: Ja</p>
+		<br />
+	}
+}
+else
+{
+	@if(@Model.Delivered == true)
+			delivered = "Ja";
+	else
+			delivered = "Nej";
+
+	<h5><span>Din beställning</span></h5>
+
+	<p>BeställningsID: @Model.OrderId</p>
+	<p>Totalbelopp: @Model.TotalAmount kr</p>
+	<p>Levererad: @delivered</p>
+	<p>Ditt kundID: @Model.CustomerId</p>
+	<br />
+	<p><strong>Din mat är nu på väg, tack för din beställning !</strong></p>
+	<br />
+}
+	<button id="button-profile"><a asp-controller="Account" asp-action="Profile">Tillbaka till min profil</a></button>
+
+</main>

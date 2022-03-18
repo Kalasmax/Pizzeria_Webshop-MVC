@@ -1,0 +1,49 @@
+﻿@model List<OrderViewModel>
+
+@{
+	ViewBag.Title = "Varukorg";
+	int total_articles = 0;
+	int total_sum = 0;
+}
+	
+<main id="main">
+
+	<h3><span>Varukorg</span></h3>
+
+	<h5><span>Dina artiklar</span></h5>
+
+	@if(@Model != null)
+	{
+		@if(@Model.Count == 0)
+		{
+			<p>Här var det tomt!</p>
+		}
+		
+			@foreach(var article in @Model)
+			{
+				<p>@article.Amount x @article.FoodName</p>
+
+				total_articles += @article.Amount;
+				total_sum += article.Price;
+			}
+
+		<h5><span>Totalbelopp</span></h5>
+		<p><strong>@total_articles</strong> st artiklar á <strong>@total_sum kr</strong></p><br />
+
+		@if(@Model.Count != 0)
+		{
+			<button id="button-profile">
+				<a asp-controller="Order" asp-action="Order" asp-route-sum="@total_sum" method="post">
+					Bekräfta och beställ
+				</a>
+			</button> 
+		}
+	}
+	else
+	{
+		<p>Här var det tomt!</p>
+	}
+
+
+</main>
+

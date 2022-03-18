@@ -1,0 +1,29 @@
+﻿@model List<FoodType>
+
+@{
+	ViewBag.Title = "Välkommen till Tomasos Pizzeria";
+}
+
+<main id="main">
+
+	<h3><span>Välkommen till Tomaso`s</span></h3>
+
+	<h4>Välkommen!</h4>
+
+	<h6>
+		Här tillagas den bästa italienska pizzan och pastan i hela Halifax. <br />
+		Med läge vid 256 Bedford Highway, levererar vi till HELA Halifax och Bedford.
+	</h6>
+
+	<h5><span>Vi serverar:</span></h5>
+	@foreach(var food in Model)
+	{
+		<h6>@food.Description</h6>
+	}
+	<h6>m.m</h6>
+	@if(ViewBag.Status == true)
+	{
+		<h6><small>Du har loggats ut !</small></h6>
+	}
+</main>
+

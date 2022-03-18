@@ -1,0 +1,343 @@
+﻿/* Body */
+body {
+    font-family: 'Montserrat Alternates';
+    background-image: url("/images/background.jpg");
+    background-color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center, center;
+}
+
+/* General*/
+
+
+
+/* h-tag dibs list: */
+/*
+
+    h3 = Titel för hela viewen
+    h4 = Nav bar text knappar
+    h5 = Titel för text i viewen
+    h6 = Text välkommen på Home/Index
+*/
+
+
+/* Navigation */
+#nav-header {
+    border-bottom: 3px solid rgb(192, 50, 60);
+    border-radius: 7.5px;
+    opacity: 91.5%;
+}
+    #nav-header:hover {
+        opacity: 96.5%;
+    }
+
+#navbar-brand {
+    width: 150px;
+    height: 50px;
+}
+    #navbar-brand:hover {
+        width: 152.5px;
+        height: 52.5px;
+        margin: -1.25px;
+    }
+
+#navbar-cart {
+    width: 42.5px;
+    height: 40px;
+    margin-left: 1030px;
+}
+
+#navbar-toggler {
+    border: 2px solid rgb(192, 50, 60);
+}
+#navbar-toggler-icon {
+    /*background-image: url(~/images/navbar-toggler-icon.svg);*/
+}
+
+h4 {
+    height: 15px;
+    font-weight: 600;
+}
+    h4 span {
+        color: rgb(192, 50, 60);
+        border-left: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+        padding: 6px 15px 6px 15px;
+        margin: -8.5px;
+    }
+        h4 span:hover {
+            color: rgb(137, 29, 42);
+            border-left-color: darkgray;
+        }
+
+
+/* Container */
+#container {
+ 
+}
+
+
+
+/* Main */
+#main {
+    width: 50%;
+    /*height: 50%;*/
+    background-color: rgb(248, 249, 250);
+
+    opacity: 91.5%;
+
+    margin: 2.5% auto 0px auto;
+    padding-bottom: 25px;
+
+    border: 2px solid rgb(192, 50, 60);
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+/* Menu */
+#main.menu {
+    height: 750px;
+}
+
+ul {
+    list-style: none;
+}
+
+#nav-menu {
+    font-size: 22px;
+    border-bottom: 2px solid rgb(192, 50, 60);
+    border-radius: 3px;
+    margin: -2% auto 3% auto;
+    padding-top: 0;
+}
+#navbar-menu {
+    margin-right: 595px;
+    letter-spacing: 5px;
+}
+    #navbar-menu-x .nav-link{
+       margin-left: 47.5%;
+    }
+
+/* Category food */
+/*#active-category{         //waste of time js utility
+    text-decoration: underline;
+    font-weight: 600;
+}*/
+.nav-link:hover {
+    /*text-decoration: underline;*/
+    font-weight: 600;
+}
+.nav-link strong {
+    text-decoration: underline;
+    font-weight: 600;
+    color: gray;
+}
+
+
+/* Meny list */
+#ul-menu-y{
+    height: 640px;
+    overflow: auto;
+}
+    #li-menu-y {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        margin: -1px 27.5px 0px auto;
+        padding: 0.125% 0px 1.25% 0px;
+    }
+        #overflow-y {
+
+        }
+
+/*  
+    I want to make the UI more interactive, "mouseenter" will increase the size of the <li> item (Y-axis) - if clicked,
+    the <li> item will lock in size and display Matratt.Beskrivning about the selected food as well as Matratt.Typ it belongs to.
+    A <button> "add-to-cart" too ofc, looks ugly with a button for each item in the list currently.. if I only had the time.
+*/
+
+
+/* Menu add to cart button*/
+#button-addtocart {
+    font-size: 14px;
+    background-color: rgb(192, 50, 60);
+    color: white;
+    border: 2px solid rgb(192, 50, 60);
+    border-radius: 10px;
+    margin: 1.5%;
+}
+
+    #button-addtocart:hover {
+        background-color: rgb(165, 30, 50);
+    }
+
+    #button-addtocart:active {
+        box-shadow: 0px 0px 4px rgb(245, 33, 55);
+    }
+#input-amount{
+    border: 0px solid white;
+    margin: 1.5px 0px 1.5px 3px;
+    background-color: white;
+    border-radius: 7.5px;
+}
+
+
+/* Contact */
+iframe {
+    width: 475px;
+    height: 325px;
+    border-radius: 7px;
+    border: 1px solid lightgray;
+}
+
+
+/* Account */
+bold {
+    color: rgb(175, 50, 60);
+}
+#label-userform{
+    margin-top: -7.5px;
+    margin-bottom: 5px;
+}
+#input-userform {
+    font-size: 15px;
+    height: 34px;
+    width: 50%;
+    margin: -2px auto -0.5% auto;
+}
+#input-loginform {
+    font-size: 16px;
+    height: 36px;
+    width: 50%;
+    margin: 1% auto 2% auto;
+}
+#input-userform-error{
+    font-size: 13px;
+}
+.text-danger {
+    padding-top: 5px;
+}
+
+small {
+    padding-top: 5px;
+}
+
+#button-userform {
+    border: 1px solid rgb(192, 50, 60);
+    background-color: rgb(192, 50, 60);
+}
+    #button-userform:hover {
+        background-color: rgb(165, 30, 50);
+    }
+    #button-userform:focus {
+        box-shadow: 0px 0px 4px rgb(245, 33, 55);
+    }
+
+
+#button-register-form {
+    color: rgb(192, 50, 60);
+}
+    #button-register-form:hover a {
+        /*background-color: rgb(165, 30, 50);*/
+    }
+    #button-register-form:hover {
+    }
+
+    #button-register-form:focus {
+        box-shadow: 0px 0px 4px rgb(245, 33, 55);
+    }
+
+#button-profile a {
+    color: white;
+}
+#button-profile a:hover {
+    text-decoration: none;
+}
+#button-profile {
+    background-color: rgb(192, 50, 60);
+    color: rgb(192, 50, 60);
+    border-radius: 5px;
+    border: 1px solid rgb(192, 50, 60);
+}
+#button-profile:hover {
+    background-color: rgb(165, 30, 50);
+}
+
+
+#button-addtocart a {
+    color: white;
+}
+
+#button-addtocart a:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* Text tags */
+p {
+    font-size: 18px;
+    margin-bottom: 0.15%;
+}
+p strong{
+    font-size: 18px;
+    font-weight: 600;
+}
+p span{
+  
+    font-size: 17px;
+}
+
+h3 {
+    margin: -1.5% auto 3% auto;
+    text-align: center;
+    font-weight: 600;
+}
+    h3 span {
+        color: rgb(192, 50, 60);
+        background-color: rgb(248, 249, 250);
+        border: 3px solid rgb(192, 50, 60);
+        padding: 5px 10px 5px 10px;
+        border-radius: 7.5px;
+    }
+
+h5 {
+    margin: 1% auto 1% auto;
+    text-decoration-line: none;
+}
+    h5 span {
+        text-decoration-line: underline;
+        
+    }
+
+h6 {
+    margin: 2% auto 1% auto;
+    font-size: 20px;
+}
+h6 small{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+
+/* Footer */
+#footer {
+    background-color: rgb(32, 33, 36);
+    color: white;
+    width: 100%;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    padding-right: 10px;
+    cursor: default;
+}

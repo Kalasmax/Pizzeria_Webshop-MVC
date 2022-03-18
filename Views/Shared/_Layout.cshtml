@@ -1,0 +1,100 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Länkar en ikon som används vid webbsidans flik-->
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/icon.ico" />
+
+    <!-- En <title> för fliken skickas genom ViewBag och gör Layouten dynamisk -->
+    <title>Tomasos pizzeria - @ViewBag.Title</title>
+
+    <!-- Bootstrap CDN länkas till projektet, likt som med en Css fil -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Bootstrap's jQuery CDN bör länkas före -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap's JavaScript CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" integrity="sha512-o6XqxgrUsKmchwy9G5VRNWSSxTS4Urr4loO6/0hYdpWmFUfHqGzawGxeQGMDqYzxjY9sbktPbNlkIQJWagVZQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Lokala statiska filer (Css/Js) -->
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+
+    <!-- Lokal javascript -->
+    <script src="~/js/utilities.js" defer></script>
+</head>
+<body>
+
+    <div id="container">
+
+        <header id="header">
+
+            <!-- Header / nav bar-->
+            <nav id="nav-header" class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+
+                <!-- Brand icon button -->
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img id="navbar-brand" src="~/images/brand.png" class="d-inline-block align-top" alt="">
+                </a>
+
+                <!-- Burger menu button -->
+                <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                    <span id="navbar-toggler-icon" class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Nav links -->
+                <div class="collapse navbar-collapse" id="navbar">
+
+                    <ul id="navbar-header" class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index"><h4><span>Hem</span></h4></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Menu"><h4><span>Meny</span></h4></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="About"><h4><span>Om oss</span></h4></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Contact"><h4><span>Kontakt</span></h4></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Profile"><h4><span>Mina sidor</span></h4></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="navbar-cart" asp-controller="Order" asp-action="Cart">
+                                <img id="navbar-cart" src="~/images/cart.png" class="d-inline-block align-top" alt="Varukorg">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+        <!-- Renderar resterande innehåll för View -->
+        <div id="content">
+            @RenderBody()
+        </div>
+
+        <footer id="footer">
+            &copy; 2022 Tomaso`s Pizzeria Made by Max Appelgren.
+        </footer>
+
+    </div>
+
+</body>
+</html>

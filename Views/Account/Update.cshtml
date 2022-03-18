@@ -1,0 +1,86 @@
+﻿@model UpdateViewModel
+
+@{
+	ViewBag.Title = "Redigera användare";
+}
+
+<main id="main">
+
+<h3><span>Redigera användare</span></h3>
+
+    <form asp-controller="Account" asp-action="Update" method="post">
+        <div class="form-group">
+            <h5 id="label-userform"><span>Namn</span></h5>
+
+            <input asp-for="Name" type="text" class="form-control" id="input-userform" 
+            value=@Model.Name placeholder="Ange fullständigt namn">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <h5 id="label-userform"><span>Adress</span></h5>
+
+            <input asp-for="Street" type="text" class="form-control" id="input-userform"
+            value=@Model.Street placeholder="Adress">
+            <span asp-validation-for="Street" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <h5 id="label-userform"><span>Postnummer</span></h5>
+
+            <input asp-for="ZipCode" type="text" class="form-control" id="input-userform"
+            value=@Model.ZipCode placeholder="Postnr">
+            <span asp-validation-for="ZipCode" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <h5 id="label-userform"><span>Postort</span></h5>
+
+            <input asp-for="City" type="text" class="form-control" id="input-userform" 
+            value=@Model.City placeholder="Postort">
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <!-- Email (inte obligatorisk) -->
+            <h5 id="label-userform"><span>Epost</span></h5>
+
+            <input asp-for="Email" type="email" class="form-control" id="input-userform"
+            value=@Model.Email placeholder="Epost"> 
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <!-- Telefon (inte obligatorisk) -->
+            <h5 id="label-userform"><span>Telefon</span></h5>
+
+            <input asp-for="PhoneNumber" type="tel" class="form-control" id="input-userform"
+            value=@Model.PhoneNumber placeholder="Telefon"> 
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <h5 id="label-userform"><span>Användarnamn</span></h5>
+
+            <input asp-for="UserName" type="text" class="form-control" id="input-userform"
+            value=@Model.UserName placeholder="Användarnamn">
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <h5 id="label-userform"><span>Lösenord</span></h5>
+
+            <input asp-for="Password" type="password" class="form-control" id="input-userform"
+            value=@Model.Password placeholder="Lösenord"><br />
+            <span asp-validation-for="Password" class="text-danger"> 
+                
+                @if(@ViewBag.Message != "")
+                {
+                    @ViewBag.Message
+                }
+            </span>
+        </div>
+
+        <button id="button-userform" type="submit" class="btn btn-primary">Uppdatera användare</button>
+    </form>
+</main>

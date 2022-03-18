@@ -1,0 +1,70 @@
+﻿@model List<Food>
+@inject IFoodRepo foodRepo
+
+@{
+	ViewBag.Title = ViewData["Title"];
+	List<FoodType> types = foodRepo.GetFoodTypeList();
+}
+
+<main id="main" class="menu">
+
+	<h3><span>Meny</span></h3>
+
+	<nav id="nav-menu" class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+
+		<div class="collapse navbar-collapse" id="navbar-menu">
+					
+			<div id="navbar-menu" class="collapse navbar-collapse mx-auto">
+
+				<div id="navbar-menu-x" class="navbar-nav mx-auto" >
+
+					<!-- Auto-genererade kategorier i meny -->
+					@foreach(var type in types)
+					{	
+						<a asp-controller="Home" asp-action="Menu" asp-route-type="@type.Description" class="nav-link">
+							
+							@if(type.Description == ViewData["Title"].ToString())
+							{
+								<strong>@type.Description</strong>
+							}
+							else
+								@type.Description
+						</a>	
+					}
+				</div>
+			</div>
+		</div>
+	</nav>	
+
+	<div id="overflow-y" class="overflow-auto">
+
+		<ul id="ul-menu-y">
+
+			@foreach(var meal in Model)
+			{
+				
+				<li id="li-menu-y">
+					<h5><span>@meal.FoodName</span></h5>
+
+					@{
+						string details = string.Empty;
+						@foreach(var ingredient in meal.Products)
+						{
+							details += @ingredient.ProductName + ", ";
+						}
+						details += @meal.Price + " kr";
+					}
+
+					@details <br>
+					
+					<button id="button-addtocart">
+						<a id="a-addtocart" asp-controller="Order" asp-action="AddToCart" asp-route-id=@meal.FoodId>
+						Lägg till i varukorg
+						</a>
+					</button> 
+				</li>
+			}
+		</ul>
+	</div>
+</main>
+

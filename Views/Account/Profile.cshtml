@@ -1,0 +1,40 @@
+﻿@model ApplicationUser
+
+@{
+	ViewBag.Title = "Mina sidor";
+}
+
+<main id="main">
+
+	<h3><span>Mina sidor</span></h3>
+
+	<h5><span>@Model.Name</span></h5>
+	<p>Välkommen till din profil</p>
+	<p>Här kan du redigera dina kontouppgifter,</p>
+	<p>visa din varukorg och dina ordrar</p>
+
+	<h5><span>Kontouppgifter</span></h5>
+	<p>Användarnamn: @Model.UserName</p>
+	<p>Email: @Model.Email</p>
+	<p>Telefon: @Model.PhoneNumber</p>
+	
+	<p><br />
+		<span>
+			
+			<button id="button-profile"><a asp-controller="Order" asp-action="Cart">Varukorg</a></button>
+			<button id="button-profile"><a asp-controller="Order" asp-action="Order">Ordrar</a></button>
+			<button id="button-profile"><a asp-controller="Account" asp-action="Update">Redigera användare</a></button>
+			<button id="button-profile"><a asp-controller="Account" asp-action="Logout">Logga ut</a></button><br />
+
+			@if(ViewBag.Status == true)
+			{
+				<h6><small>Dina uppgifter har uppdaterats !</small></h6>
+			}
+		</span>
+	</p>
+</main>
+
+	
+
+	
+
